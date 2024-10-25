@@ -1,0 +1,6 @@
+Best practices for evaluating new fuzzing algorithms have largely been
+established in a research-centric context:  fuzzers are compared by
+running them repeatedly over a set of benchmarks, and comparing code
+coverage (and, to some extent, bug detection) from an intially empty
+or minimal corpus.  While reasonable for evaluating fuzzing research,
+such methods are not useful in the context of a long-running fuzzing campaign.  E.g., a major open source project using Google's OSS-Fuzz may have an estabilshed corpus of tens or hundreds of thousands of inputs; a method that performs well on an empty corpus may be incapable of improving on the results of a vast number of CPU hours spent fuzzing.  Evaluating using the established corpuses, however, is likely to show that all proposed methods fail to discover new coverage elements in a reasonable amount of evaluation time.  We propose a practical method, based on binary-level mutation, that addresses these problems.  In part our approach relies on a novel distinction between \emph{oracle} improvements and \emph{fuzzer efficiency} improvements.  The approach is primarily evaluated by real-world use on the extensive fuzzing infrastructure for the bitcoin core implementation, and by smaller-scale experiments over a set of additional large, heavily-fuzzed, open source systems.
