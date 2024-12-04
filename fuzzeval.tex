@@ -95,12 +95,27 @@ Second Institution
 \section{Introduction}
 %-------------------------------------------------------------------------------
 
-A paragraph of text goes here. Lots of text. Plenty of interesting
-text. Text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text.
-More fascinating text. Features galore, plethora of promises.
+Fuzzer evaluation~cite{FuzzerHicks} is a difficult and critical task
+for security-vulnerability detection research.  A semi-consensus on
+methods for evaluation of fuzzers has to some extent been established
+in the community, and even embodied in Google's FuzzBench
+infrastructure~\cite{metzman2021fuzzbench}.   Such evaluations are
+primarily carried out in what might be called a ``Year Zero''
+scenario: a set of benchmarks are chosen, and multiple (usually at
+least 10) runs of all
+fuzzers under consideration are performed (usually for a duration of
+at least 24 hours) starting from an empty corpus.  The fuzzers are
+then compared on the basis of some meaningful metric, either coverage
+or bug detection (other metrics have been
+proposed~\cite{gavrilov2020practical}, but in practice are seldom
+used).
+
+This approach may be useful for the typical research effort:  it
+serves, at least, to establish that a novel fuzzing method is able to
+improve on existing approaches in a statistically meaningful way.
+Unfortunately, this approach is largely useless for the most important
+\emph{industrial} fuzzing evaluation task: determining whether 
+changes made in the context of a long-running industrial fuzzing campaign will be beneficial.
 
 %-------------------------------------------------------------------------------
 \section{Footnotes, Verbatim, and Citations}
