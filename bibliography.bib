@@ -1480,6 +1480,34 @@ number = 6,
 pages = "418--421"
 }
 
+@misc{SatFuzz,
+ title = "The Saturation Effect in Fuzzing",
+ author = "Alex Groce and John Regehr",
+ howpublished = "\url{https://blog.regehr.org/archives/1796}"
+ }
+
+@INPROCEEDINGS{ReachCov,
+  author={Liyanage, Danushka and Böhme, Marcel and Tantithamthavorn, Chakkrit and Lipp, Stephan},
+  booktitle={2023 IEEE/ACM 45th International Conference on Software Engineering (ICSE)}, 
+  title={Reachable Coverage: Estimating Saturation in Fuzzing}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={371-383},
+  keywords={Codes;Upper bound;Runtime;Computer bugs;Fuzzing;Software},
+  doi={10.1109/ICSE48619.2023.00042}}
+
+@INPROCEEDINGS{Lacunae,
+  author={Groce, Alex and Jain, Kush and van Tonder, Rijnard and Kalburgi, Goutamkumar Tulajappa and Goues, Claire Le},
+  booktitle={2022 IEEE/ACM 44th International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)}, 
+  title={Looking for Lacunae in Bitcoin Core's Fuzzing Efforts}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={185-186},
+  keywords={Bitcoin;Fuzzing;Software systems;Software engineering;fuzzing;saturation;test diversity;mutation analysis;oracle strength},
+  doi={10.1145/3510457.3513072}}
+
 @incollection{Hamlet94,
 author = {Richard Hamlet},
 title = {Random testing},
@@ -2830,6 +2858,47 @@ author = "J. Offutt and A. Abdurazik",
 year = 2000,
 booktitle = "Mutation 2000:  Mutation Testing in the Twentieth and the Twenty First Centuries"
 }
+
+@article{demillo1978hints,
+  title={Hints on test data selection: Help for the practicing programmer},
+  author="Richard J. Lipton and Richard A DeMillo and Frederick G Sayward",
+  journal={Computer},
+  volume={11},
+  number={4},
+  pages={34--41},
+  year={1978},
+  publisher={IEEE}
+}
+
+
+@book{budd1979mutation,
+  title={Mutation analysis},
+  author="Timothy Budd and Richard J. Lipton and Richard A DeMillo and Frederick G Sayward",
+  year={1979},
+  publisher={Yale University, Department of Computer Science}
+}
+
+
+@article{UMSyntax,
+author = {Deb, Sourav and Jain, Kush and van Tonder, Rijnard and Le Goues, Claire and Groce, Alex},
+title = {Syntax Is All You Need: A Universal-Language Approach to Mutant Generation},
+year = {2024},
+issue_date = {July 2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {1},
+number = {FSE},
+url = {https://doi.org/10.1145/3643756},
+doi = {10.1145/3643756},
+abstract = {While mutation testing has been a topic of academic interest for decades, it is only recently that “real-world” developers, including industry leaders such as Google and Meta, have adopted mutation testing. We propose a new approach to the development of mutation testing tools, and in particular the core challenge of generating mutants. Current practice tends towards two limited approaches to mutation generation: mutants are either (1) generated at the bytecode/IR level, and thus neither human readable nor adaptable to source-level features of languages or projects, or (2) generated at the source level by language-specific tools that are hard to write and maintain, and in fact are often abandoned by both developers and users. We propose instead that source-level mutation generation is a special case of program transformation in general, and that adopting this approach allows for a single tool that can effectively generate source-level mutants for essentially any programming language. Furthermore, by using parser parser combinators many of the seeming limitations of an any-language approach can be overcome, without the need to parse specific languages. We compare this new approach to mutation to existing tools, and demonstrate the advantages of using parser parser combinators to improve on a regular-expression based approach to generation. Finally, we show that our approach can provide effective mutant generation even for a language for which it lacks any language-specific operators, and that is not very similar in syntax to any language it has been applied to previously.},
+journal = {Proc. ACM Softw. Eng.},
+month = jul,
+articleno = {30},
+numpages = {21},
+keywords = {Mutants, Mutation Generation, Software Testing}
+}
+
+
 
 @article{MutComp,
 author = "R. Hamlet",
@@ -4281,6 +4350,22 @@ PUBLISHER =    {Prentice-Hall, Englewood Cliffs, New Jersey},
 YEAR =         {1976}
 }
 
+@misc{ossfuzz,
+  title = "oss-fuzz",
+  howpublished = "\url{https://github.com/google/oss-fuzz}"
+  }
+
+@ARTICLE{ArtSciFuzz,
+  author={Manès, Valentin J.M. and Han, HyungSeok and Han, Choongwoo and Cha, Sang Kil and Egele, Manuel and Schwartz, Edward J. and Woo, Maverick},
+  journal={IEEE Transactions on Software Engineering}, 
+  title={The Art, Science, and Engineering of Fuzzing: A Survey}, 
+  year={2021},
+  volume={47},
+  number={11},
+  pages={2312-2331},
+  keywords={Fuzzing;Security;Computer bugs;Terminology;Software security;automated software testing;fuzzing;fuzz testing},
+  doi={10.1109/TSE.2019.2946563}}
+
 @inproceedings{ESCJ,
 author =       {Cormac Flanagan and K. Rustan M. Leino and Mark Lillibridge and Greg Nelson and James B. Saxe and Raymie Stata},
 title =        {Extended static checking for {J}ava},
@@ -4323,11 +4408,68 @@ SERIES =       {Texts and Monographs in Computer Science},
 YEAR =         {1990}
 }
 
+
+@misc{AmazonMut,
+  author="Giorgio Natili",
+  title="Mutation Testing at Scale",
+  howpublished="\url{https://slides.com/giorgionatili/mutation-testing-at-scale}"
+  }
+
+
+@book{mathur2012foundations,
+  author = {Mathur, Aditya P},
+  title = {Foundations of Software Testing},
+  year = {2012},
+  publisher = {Addison-Wesley}
+}
+
+@INPROCEEDINGS{GoogleMut,
+  author={Petrovic, Goran and Ivankovic, Marko and Kurtz, Bob and Ammann, Paul and Just, René},
+  booktitle={2018 IEEE International Conference on Software Testing, Verification and Validation Workshops (ICSTW)}, 
+  title={An Industrial Application of Mutation Testing: Lessons, Challenges, and Research Directions}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={47-53},
+  doi={10.1109/ICSTW.2018.00027}}
+
+@inproceedings{BellerFacebookMutation,
+  author    = {Moritz Beller and
+               Chu{-}Pan Wong and
+               Johannes Bader and
+               Andrew Scott and
+               Mateusz Machalica and
+               Satish Chandra and
+               Erik Meijer},
+  title     = {What It Would Take to Use Mutation Testing in Industry - {A} Study
+               at Facebook},
+  booktitle = {International Conference on Software Engineering:
+               Software Engineering in Practice},
+  pages     = {268--277},
+  publisher = {{IEEE}},
+  year      = {2021},
+  url       = {https://doi.org/10.1109/ICSE-SEIP52600.2021.00036},
+  doi       = {10.1109/ICSE-SEIP52600.2021.00036},
+  timestamp = {Mon, 28 Jun 2021 14:32:57 +0200},
+  biburl    = {https://dblp.org/rec/conf/icse/BellerWBSM0021.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
 @misc{Flash,
 title =        {A Collection of {NAND} {Flash} Application Notes, Whitepapers and Articles},
 howpublished =       {\url{http://www.data-io.com/NAND/NANDApplicationNotes.asp}}
 }
 
+@INPROCEEDINGS{FuzzAppeal,
+  author={Gavrilov, Miroslav and Dewey, Kyle and Groce, Alex and Zamanzadeh, Davina and Hardekopf, Ben},
+  booktitle={2020 IEEE 20th International Conference on Software Quality, Reliability and Security (QRS)}, 
+  title={A Practical, Principled Measure of Fuzzer Appeal: A Preliminary Study}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={510-517},
+  keywords={Measurement;Computer bugs;Smart contracts;Software quality;Tools;Software reliability;Security;fuzzing;evaluation methodology;evaluation metrics},
+  doi={10.1109/QRS51102.2020.00071}}
 
 @article{Lowe95,
 author    = {Gavin Lowe},
