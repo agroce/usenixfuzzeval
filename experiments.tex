@@ -1,3 +1,62 @@
 \section{Experimental Evaluation}
 
+In order to evaluate our approach, we studied its performance on past
+changes made to open source projects using Google's OSS-Fuzz
+infrastructure.  In particular, we selected projects:
+
+\begin{itemize}
+\item With a long history of OSS-Fuzz usage, so we could ensure we
+  were applying our technique to the target class of problem: changes
+  to fuzzers with a long history and mature/potentially saturated
+  corpus.
+  \item Such that we could extract past corpus data from revision
+    control or other sources, and apply evaluations of changes to the
+    appropriate state of the campaign.
+  \end{itemize}
+
+Projects with a long history of OSS-Fuzz usage are essentially
+guaranteed to be critical software with large real-world impact and
+it is generally the case that their fuzzing efforts are well-supported
+(hence early adoption of OSS-Fuzz).  The one exception to the rule of
+preferring projects with longer OSS-Fuzz history was that we also
+chose some changes from the Bitcoin Core implementation, with the
+guidance of Bitcoin Core fuzzing engineers.  This allowed us to
+include changes specifically identified as of interest to fuzzing
+engineers on a highly critical project who were considering adopting
+our technique.
+
+For each project and each change (see Table~\ref{tab:projchange}) we
+applied multiple evaluation methods.  Each evaluation was applied on a
+basis of 10 runs of 48 hours for each run.  We evaluated every change
+by the following baseline methods:
+
+\begin{itemize}
+\item Statement coverage
+\item Branch coverage
+\item Crash count
+\end{itemize}
+
+We did not attempt to disambiguate bugs beyond the standard crash
+bucketing measures of fuzzers.  Additionally, depending on whether we
+classified a change as an oracle change or a fuzzer efficiency change,
+we applied the respective relevant technique (``pure'' mutation testing and
+testing for re-discovery of observable mutants) proposed in this
+paper.   We selected changes with a bias towards fuzzer efficiency
+changes, as the proposed method is more complex and non-standard, and
+in our opinion thus requires more experimental evidence of its
+effectiveness.  The discussion of results below further explains how
+which statistics of the 10 runs for each evaluation we used to examine
+the sensitivity of methods to changes in fuzzer performance.
+
 \subsection{Research Questions}
+
+\begin{itemize}
+\item {RQ1:  Are our methods consistently more capable of detecting
+    fuzzer changes than the baseline methods?}
+\item {RQ2:}  How often do our methods fail to detect that a change has
+    an impact?
+  \item {RQ3:} In cases where fuzzer changes were rolled-back in a
+    project (indicating either a negative impact on fuzzing or at
+    least a lack of positive impact worth preserving) were our methods
+    able to predict this outcome?
+  \end{itemize}
